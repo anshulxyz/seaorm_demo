@@ -1,0 +1,18 @@
+[package]
+name = "seaorm_demo"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = [".", "entity", "migration"]
+
+[dependencies]
+entity = { path = "entity" }
+migration = { path = "migration" }
+tokio = { version = "1.20", features = ["macros", "rt-multi-thread"] }
+
+[dependencies.sea-orm]
+version = "0.9"
+features = [ "sqlx-sqlite", "runtime-tokio-rustls", "macros" ]
+default-features = false
+
